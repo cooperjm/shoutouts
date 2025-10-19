@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 export default function Header() {
 	return (
-		<header className='bg-white dark:bg-black shadow-sm'>
-			<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+		<header className='bg-white dark:bg-black shadow-sm max-w-7xl w-full py-7 px-4 xl:px-0'>
+			<div className='max-w-7xl mx-auto'>
 				<div className='flex justify-between items-center h-16'>
 					{/* Logo/Brand */}
 					<div className='flex items-center'>
