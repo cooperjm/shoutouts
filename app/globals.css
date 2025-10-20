@@ -27,3 +27,13 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
+@keyframes sweep {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 160% 0%; }
+}
+
+@theme inline {
+  --animate-sweep: sweep 16s linear infinite;
+}
+

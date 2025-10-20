@@ -3,6 +3,7 @@ import { prisma } from '@/lib/db';
 import RecentShoutouts from './_components/RecentShoutouts';
 import { ShoutoutForm } from './_components/ShoutoutForm';
 import Main from '@/components/shared/main';
+import Hero from './_components/Hero';
 
 function sanitize(input: unknown, max = 500) {
   const value = String(input ?? '').trim();
@@ -21,10 +22,13 @@ export default async function Page() {
   }
 
   return (
-    <Main>
+    <>
+    <Hero></Hero>
+    <Main>      
       <h1>Send a Shoutout</h1>
       <ShoutoutForm action={createShoutout} />
       <RecentShoutouts />
     </Main>
+    </>
   );
 }
