@@ -13,6 +13,12 @@ export default function Hero() {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
+      rileyRef.current?.classList.remove('opacity-0', 'translate-x-20');
+      shoutoutRef.current?.classList.remove('opacity-0', 'translate-x-10', 'scale-[0.3]');
+
+      gsap.set(rileyRef.current, { opacity: 0, x: 80 });
+      gsap.set(shoutoutRef.current, { opacity: 0, x: 40, scale: 0.3 });
+
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
       tl.to(rileyRef.current, {
@@ -54,8 +60,7 @@ export default function Hero() {
     >
       <div
         ref={rileyRef}
-        className="w-[60%] absolute bottom-0 right-[-10%]"
-        style={{ opacity: 0, transform: 'translateX(5rem)' }}
+        className="w-[60%] absolute bottom-0 right-[-10%] opacity-0 translate-x-20"
       >
         <Image
           src={riley}
@@ -67,8 +72,7 @@ export default function Hero() {
 
       <div
         ref={shoutoutRef}
-        className="w-[50%] absolute top-1/2 -translate-y-1/2 left-0"
-        style={{ opacity: 0, transform: 'translateX(2.5rem) scale(0.3)' }}
+        className="w-[50%] absolute top-1/2 -translate-y-1/2 left-0 opacity-0 translate-x-10 scale-[0.3]"
       >
         <Image src={shoutout} alt="Shoutouts" className="w-full h-auto" />
       </div>
